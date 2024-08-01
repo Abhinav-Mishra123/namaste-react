@@ -1,3 +1,105 @@
-.heading{
-    color: red;
+.main-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid rgb(194, 194, 194);
+    border-radius: 10px;
+    padding: 0px 10px;
+}
+.navmenu ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.navmenu ul li {
+    list-style: none;
+    margin: 0px 12px;
+}
+.navmenu ul li a{
+    text-decoration: none;
+    color: black;
+    font-size: 24px;
+}
+.body-container{
+    margin-top: 20px;
+}
+.search-box {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.search-box input {
+    width: 100%;
+    height: 40px;
+}
+.search-btn{
+    height: 47px;
+    border: none;
+    width: 150px;
+    color: black;
+    font-weight: bold;
+    font-size: 18px;
+}
+.top-rated{
+    height: 40px;
+    margin: 10px 0px;
+    font-size: 18px;
+}
+.res-container{
+    display: flex !important;
+    flex-wrap: wrap;
+    align-items: center;
+    -moz-column-gap: 15px;
+    column-gap: 15px;
+    row-gap: 15px;
+}
+.restaurent-card{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    flex: 1 1 10%;
+    padding: 13px;
+
+}
+.food-img{
+    width: 243px;
+    height: 163px;
+    border-radius: 20px;
+}
+.food-img img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+}
+.restaurent-name{
+    font-size: 20px;
+    font-weight: bold;
+    padding: 4px 0px;
+}
+.rating-and-min{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.ratingimg{
+    width: 20px;
+    height: 20px;
+}
+.rating-con{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+}
+.delivery-time{
+    padding-left: 10px;
+}
+.cuisines-name{
+    font-size: 18px;
+    margin-top: 5px;
+}
+.restaurent-location{
+    font-size: 18px;
 }
