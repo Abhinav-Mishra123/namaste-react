@@ -103,3 +103,23 @@
 .restaurent-location{
     font-size: 18px;
 }
+.form-group{
+    width: 100%;
+    position: relative;
+}
+img.cross_icon {
+    position: absolute;
+    right: 0px;
+    top: 13px;
+    display: block;
+}
+.shimmer-container{
+    display: flex;
+    flex-wrap: wrap;
+}
+.shimmer-cards{
+    margin: 20px;
+    width: 250px;
+    height: 310px;
+    background-color: #f0f0f0
+}
