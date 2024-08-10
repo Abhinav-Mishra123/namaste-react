@@ -4,10 +4,10 @@ const Header = () => {
   return (
     <div className="main-header">
       <div className="logo-container">
-        <Link to="/">
+        <a href="">
           {" "}
           <img src={LOGO_URL} width={100}></img>
-        </Link>
+        </a>
       </div>
       <div className="navmenu">
         <ul>
