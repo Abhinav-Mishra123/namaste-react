@@ -15,8 +15,10 @@ const Body = () => {
             "https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.65200&lng=77.16630&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
         );
         const res = await data.json();
-        setListOfRestaurants(res?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
-        setFilteredRestaurant(res?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+        const restaurant = res?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants;
+        setListOfRestaurants(res?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+        setFilteredRestaurant(res?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+        console.log(restaurant);
     };
 
     useEffect(() => {
@@ -100,11 +102,13 @@ const Body = () => {
             <div className="restaurant-section">
                 <div className="res-container">
                     {filteredRestaurant.map((restaurant) => (
-                        <Link  key={restaurant.info.id}
+                        <div className="food-box" key={restaurant.info.id}>
+                        <Link   className="food-card"
                         to={`/restaurants/${restaurant.info.id}`}
                         state={{ restaurant }} >
                             <RestaurentCard restaurant={restaurant} />
                         </Link>
+                        </div>
                     ))}
                 </div>
             </div>

@@ -49,23 +49,30 @@
 .res-container{
     display: flex !important;
     flex-wrap: wrap;
-    align-items: center;
     -moz-column-gap: 15px;
     column-gap: 15px;
     row-gap: 15px;
+    padding-left: calc(5% + 10px);
+    padding-right: calc(5% + 10px);
 }
-.restaurent-card{
-    display: flex;
+a.food-card {
+    width: 100%;
+}
+.food-box {
     flex-direction: column;
-    justify-content: flex-start;
-    flex: 1 1 10%;
+    flex-basis:20%;
+    justify-content: center;
+    place-items: flex-start;
     padding: 13px;
-
+    display: flex;
+    box-shadow: 0px 3px 4px #e1e1e1;
+    border: 1px solid #cbcbcb;
+    border-radius: 10px;
 }
-.food-img{
-    width: 243px;
-    height: 163px;
-    border-radius: 20px;
+.food-img {
+    border-radius: 10px;
+    width: 100%;
+    height: 170px;
 }
 .food-img img{
     width: 100%;
@@ -122,4 +129,182 @@ img.cross_icon {
     width: 250px;
     height: 310px;
     background-color: #f0f0f0
+}
+
+
+/* details page ui */
+
+.restaurants-menu-section {
+    width: calc(100vw - 40%);
+    /* margin: 0 10%; */
+    margin: 0 auto;
+}
+.upper-box {
+    border: 1px solid #e7e7e7;
+    padding: 13px;
+    border-radius: 20px;
+    box-shadow: 0px 5px 10px #b1b1b1;
+}
+.rate {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    font-weight: bold;
+}
+.fortwo{
+    padding-left: 8px;
+}
+.cusines {
+    font-family: Gilroy_Bold;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 21px;
+    letter-spacing: -0.1px;
+    color: rgb(255, 82, 0);
+    margin: 5px 0px;
+}
+/* deal section */
+.deals-container{
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 10px;
+}
+.deal-content {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.deals-container {
+    display: flex;
+    overflow-x: auto; /* Allow horizontal scrolling if needed */
+    white-space: nowrap; /* Prevent line breaks within the container */
+  }
+  
+  .deal-box {
+    vertical-align: top;
+    margin-right: 16px;
+    /* display: inline-block; */
+    border: 1px solid #adadad;
+    padding: 5px 15px;
+    border-radius: 40px;
+}
+.headeroffer{
+    font-family: Gilroy;
+    font-weight: 800;
+    font-size: 16px;
+    line-height: 20px;
+    letter-spacing: -0.3px;
+    color: rgba(2, 6, 12, 0.92);
+    overflow: hidden;
+    width: 100%;
+    display: -webkit-box;
+    overflow-wrap: break-word;
+    -webkit-box-orient: vertical;
+    margin: 0px;
+}
+.offerdesc{
+    margin: 0px;
+    font-family: Gilroy_Bold;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 18px;
+    letter-spacing: -0.3px;
+    color: rgba(2, 6, 12, 0.45);
+    overflow: hidden;
+    width: 100%;
+    display: -webkit-box;
+    overflow-wrap: break-word;
+    -webkit-box-orient: vertical;
+}
+.right-content{
+    padding-left:8px;
+}
+.deals-container::-webkit-scrollbar {
+    width: 4px;
+    background-color: #eee; /* Background color of the scrollbar track */
+    height: 4px;
+}
+
+.deals-container::-webkit-scrollbar-thumb {
+    background-color: rgb(243, 170, 136); /* Color of the scrollbar thumb */
+    border-radius: 4px;
+}
+
+.deals-container::-webkit-scrollbar-thumb:hover {
+    background-color: rgb(255, 82, 0); /* Color when hovered */
+}
+
+/* detail page content css */
+.main-content {
+    justify-content: space-between;
+    align-items: stretch;
+    display: flex;
+    border: 1px solid #e9e9e9;
+    padding: 12px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 2px 3px #e1dede;
+}
+.recipe-name{
+    font-family: Gilroy_Bold;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 20px;
+    letter-spacing: -0.3px;
+    color: rgba(2, 6, 12, 0.75);
+}
+.recipe-price{
+    font-family: Gilroy;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    letter-spacing: -0.3px;
+    color: rgba(2, 6, 12, 0.92);
+    padding: 5px 0px;
+}
+.recipe-rating{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.recipe-description{
+    font-family: Gilroy;
+    font-weight: 200;
+    font-size: 16px;
+    line-height: 19px;
+    letter-spacing: -0.3px;
+    color: rgba(2, 6, 12, 0.6);
+}
+.recipe-image {
+    width: 150px;
+    height: auto;
+    margin: auto;
+    text-align: center;
+}
+.recipe-image img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    margin: auto;
+    border-radius: 5px;
+}
+.recipe-left {
+    padding-right: 10px;
+}
+.avg-rating{
+    padding: 0px 4px;
+}
+.Category-section {
+    border: 1px solid gray;
+    margin-top: 20px;
+    padding: 0px 10px;
+    border-radius: 5px;
+    position: relative;
+    cursor: pointer;
+}
+.arrow-img {
+    position: absolute;
+    right: 4%;
+    top: 0.5%;
 }
