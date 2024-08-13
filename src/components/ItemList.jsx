@@ -1,7 +1,16 @@
 import React from "react";
 import { DEALICON } from "../utils/constants";
+import { useDispatch } from "react-redux/dist/react-redux";
+import { addItem } from "../utils/cartSlice";
 
 const ItemList = ({items}) =>{
+
+    const dispatch = useDispatch(); 
+
+
+    function handleItemsCards(item){
+        dispatch(addItem(item))
+    }
 
     return (
         <>
@@ -28,6 +37,7 @@ const ItemList = ({items}) =>{
               </div>
             </div>
             <div className="recipe-right">
+                <buttton className="add-btn" onClick={()=> handleItemsCards(item)}>Add</buttton>
                 <div className="recipe-image">
                 {item.card.info.imageId ? (
                         <img src={`${DEALICON}${item.card.info.imageId}`} alt="Recipe" />

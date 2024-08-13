@@ -12,14 +12,28 @@ import About from "./src/components/About";
 import Contact from "./src/components/Contact";
 import ErrorPage from "./src/components/ErrorPage";
 import RestaurantsMenu from "./src/components/RestaurantsMenu";
+import ThemeContext, { ThemeSwitcher } from "./src/utils/darkMode";
+import { Provider } from "react-redux/dist/react-redux";
+import appStore from "./src/utils/appStore";
+import Cart from "./src/components/Cart";
 
 
-const AppLayOut = () => (
+const AppLayOut = () => {
+  const [theme, setTheme] = useState("light");
+  const value = { theme, setTheme };
+return (
   <>
-    <Header />
-    <Outlet />
+  <Provider store={appStore}>
+  <ThemeContext.Provider value={value}>
+  <div className={theme === "dark" ? "dark-theme" : "light-theme"}>
+        <Header />
+        <Outlet />
+      </div>
+    </ThemeContext.Provider>
+    </Provider>
   </>
 )
+}
 
 const router = createBrowserRouter([
   {
@@ -37,6 +51,10 @@ const router = createBrowserRouter([
       {
         path: "/contact",
         element: <Contact/>,
+      },
+      {
+        path: "/cart",
+        element: <Cart/>,
       },
       {
         path: "/restaurants/:resId",

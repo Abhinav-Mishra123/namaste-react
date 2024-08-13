@@ -1,10 +1,18 @@
 import { LOGO_URL } from "../utils/constants";
 import { Link } from "react-router-dom"
-import userContext from "../utils/userContext";
+import UserContext from "../utils/userContext";
 import { useContext } from "react";
+import useOnlineStatus from "../utils/useOnlineStatus";
+import { ThemeSwitcher } from "../utils/darkMode";
+import { useSelector } from "react-redux/dist/react-redux";
+
 const Header = () => {
 
-  const data = useContext(userContext);
+  const { loggedInUser } = useContext(UserContext);
+  const onlineStatus = useOnlineStatus();
+
+const cartItems = useSelector((store)=> store.cart.items);
+console.log(cartItems);
 
   return (
     <div className="main-header">
@@ -14,9 +22,11 @@ const Header = () => {
           <img src={LOGO_URL} width={100}></img>
         </a>
       </div>
-      {data}
+      <h4>User : {loggedInUser} </h4>
+      {/* <ThemeSwitcher /> */}
       <div className="navmenu">
         <ul>
+        {/* <li>Online Status: {onlineStatus ? "✅" : "🔴"}</li> */}
           <li>
             <Link to="/">Home</Link>
           </li>
@@ -27,7 +37,7 @@ const Header = () => {
             <Link to="/contact">Contact us</Link>
           </li>
           <li>
-            <a href="">Cart</a>
+            <Link to="/cart">Cart({cartItems.length})</Link>
           </li>
         </ul>
       </div>
